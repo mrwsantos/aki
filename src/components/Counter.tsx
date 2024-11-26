@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./../styles/components/Counter.module.scss";
 
 const Counter = () => {
@@ -6,7 +6,9 @@ const Counter = () => {
 
   const calculateTimeLeft = () => {
     const difference = +new Date(eventDate) - +new Date();
-    if (difference <= 0) return {};
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 }; // Valores padrão
+    }
 
     return {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -23,15 +25,20 @@ const Counter = () => {
       const calculatedTime = calculateTimeLeft();
       setTimeLeft(calculatedTime);
 
-      if (Object.keys(calculatedTime).length === 0) {
+      if (
+        calculatedTime.days === 0 &&
+        calculatedTime.hours === 0 &&
+        calculatedTime.minutes === 0 &&
+        calculatedTime.seconds === 0
+      ) {
         clearInterval(timer);
       }
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [eventDate, calculateTimeLeft]);
+  }, [eventDate]);
 
-  if (!timeLeft || Object.keys(timeLeft).length === 0) {
+  if (!timeLeft || (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0)) {
     return <div className={styles.wrapper}>Evento concluído!</div>;
   }
 
@@ -51,7 +58,7 @@ const Counter = () => {
             <div className={styles.hours}>
               {timeLeft.hours.toString().padStart(2, "0")}
               {"h "}
-              {timeLeft.minutes}
+              {timeLeft.minutes.toString().padStart(2, "0")}
               {"m "}
               {timeLeft.seconds.toString().padStart(2, "0")}
               {"s "}
