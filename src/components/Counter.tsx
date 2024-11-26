@@ -29,7 +29,7 @@ const Counter = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [eventDate]);
+  }, [eventDate, calculateTimeLeft]);
 
   if (!timeLeft || Object.keys(timeLeft).length === 0) {
     return <div className={styles.wrapper}>Evento concluído!</div>;

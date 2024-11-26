@@ -92,7 +92,7 @@ const Main = () => {
   return shouldRender ? (
     <>
       <Head>
-        <title>Aki's Birthday</title>
+        <title>Aki{"'"}s Birthday</title>
         <html lang="en" />
         <meta name="description" content="Aki's Birthday" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -233,7 +233,7 @@ const Main = () => {
             }}
             className={styles.surprise}
           >
-            Surprise me! Let's GO.
+            Surprise me! Let{"'"}s GO.
           </button>
         )}
       </div>
