@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./../styles/components/Counter.module.scss";
 
-const Counter = () => {
-  const [eventDate, setEventDate] = useState("2024-12-29T06:45:00.000Z");
+type CounterProps = {
+  dateInput: string;
+};
+
+const Counter = ({ dateInput }: CounterProps) => {
+  const [eventDate, setEventDate] = useState('');
+
+  useEffect(()=>{
+    setEventDate(dateInput)
+  },[])
 
   const calculateTimeLeft = () => {
     const difference = +new Date(eventDate) - +new Date();

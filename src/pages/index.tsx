@@ -347,7 +347,7 @@ const Main = () => {
               delay={0}
             />
           </h1>
-          {showCountdown && <Counter />}
+          {showCountdown && <Counter dateInput="2024-12-29T06:45:00.000Z" />}
         </div>
       )}
       {showHappyB && step === 9 && (

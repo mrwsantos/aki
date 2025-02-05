@@ -12,6 +12,17 @@ body {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: "Digital";
+  src: url("/fonts/DS-DIGI.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*[class*='nihon'] *{
+  font-family: "Digital", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
   width: 100vw;
