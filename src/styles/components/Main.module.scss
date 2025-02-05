@@ -712,8 +712,7 @@
     }
     &.two{
       z-index: 99;
-      opacity: 0;
-      animation: breatheOut 10s  linear alternate infinite;
+      animation: breathe 10s  linear alternate infinite;
     }
   }
 
