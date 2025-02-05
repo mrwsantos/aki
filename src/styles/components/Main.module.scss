@@ -701,15 +701,37 @@
     object-fit: cover;
     width: 100%;
 
-    animation: breathe 60s linear alternate infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    
+    &.one{
+      animation: breathe 10s linear alternate infinite;
+    }
+    &.two{
+      z-index: 99;
+      opacity: 0;
+      animation: breatheOut 10s  linear alternate infinite;
+    }
   }
 
   @keyframes breathe {
     100% {
-      transform: scale(2);
-      -webkit-transform: scale(2);
+      transform: translate(-50%, -50%) scale(1.5);
+      -webkit-transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
     }
   }
+  @keyframes breatheOut {
+    100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      -webkit-transform: translate(-50%, -50%) scale(1.5);
+      opacity: 1;
+    }
+  }
+
 
   @keyframes fadeIn {
     100% {
@@ -724,6 +746,7 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     animation: fadeIn 3s 1s linear forwards;
+    z-index: 999999;
 
     width: 100%;
     display: flex;

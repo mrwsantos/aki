@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/components/Main.module.scss";
 
 import collage1 from "@/img/collage-1.jpg";
+import collage2 from "@/img/collage-2.jpg";
 
 const NihonMeeting = () => {
   return (
     <div className={styles.nihon}>
-      <img src={collage1.src} alt="" />
+      <img className={styles.one} src={collage1.src} alt="" />
+      <img className={styles.two} src={collage2.src} alt="" />
       <Counter dateInput="2025-02-17T18:40:00.000Z" />
     </div>
   );
