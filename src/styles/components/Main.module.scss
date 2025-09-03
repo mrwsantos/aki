@@ -922,9 +922,8 @@
 
 .auckland2All{
   @media (max-width: 1100px) {
-   transform: scale(.75);
-   padding:10px !important;
-
+          transform: scale(0.5) translateY(-50vh);
+        padding: 20px !important;
    *{
     font-size: 20px !important;
    }
