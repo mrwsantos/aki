@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from "../styles/components/Main.module.scss";
 import collage from "@/img/third-collage.jpg";
-
+// import video from "/auckland-2.mp4";
 
 const DigitalClock = () => {
   const [targetDate, setTargetDate] = useState('2025-09-11');
@@ -263,8 +263,34 @@ const DigitalClock = () => {
       justifyContent: 'center',
       padding: '2rem',
       position: 'relative'
-    }} >
- <img src={collage.src} alt="" style={{position: 'absolute', opacity: 0.05, width: '100%', height: '100%', objectFit: 'cover'}} />
+    }}  >
+      {/* Vídeo de fundo substituindo a imagem */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        style={{
+          position: 'absolute', 
+          opacity: 0.15, 
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover',
+          zIndex: 1
+        }}
+      >
+        <source type="video/mp4"
+         src="/auckland-2.mp4"
+        />
+        {/* Fallback para navegadores que não suportam o vídeo */}
+        <img src={collage.src} alt="" style={{
+          position: 'absolute', 
+          opacity: 0.05, 
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover'
+        }} />
+      </video>
 
       {/* Current Date/Time - Top Right */}
       <div style={{
@@ -273,7 +299,9 @@ const DigitalClock = () => {
         right: '1.5rem',
         textAlign: 'right',
         zIndex: 10
-      }}>
+      }}
+      
+      >
         <div style={{
           color: '#eddf86',
           fontSize: '1.125rem',
@@ -299,7 +327,10 @@ const DigitalClock = () => {
         maxWidth: '64rem',
         zIndex: 5,
         position: 'relative'
-      }}>
+      }}
+      
+      className={styles.auckland2All}
+      >
         
         {/* Event Title */}
         <div style={{
