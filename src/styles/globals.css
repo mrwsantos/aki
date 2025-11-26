@@ -75,6 +75,12 @@ li {
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 768px) {
+  .card25.hovered {
+      transform: translate(-10%, -50%) scale(.7);
+  }
+}
+
 .card25 .text-container {
   width: 80%;
   height: 80%;
