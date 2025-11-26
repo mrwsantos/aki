@@ -63,7 +63,7 @@ li {
   height: 800px;
   border: 10px solid #da456fc4;
   margin: 0 auto;
-  background-image: url("../img/b-2025/3.png");
+  background-image: url("/3.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,7 +238,7 @@ transition: all .1s;
   .phone{
 
     transform: translateX(-50%);
-    top: 20px;
+    top: 10px;
   }
 
 }
