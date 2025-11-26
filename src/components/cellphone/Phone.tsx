@@ -204,7 +204,7 @@ const Phone: React.FC = () => {
         </div>
       </div>
 
-      {showCard && <Card />}
+      {showCard &&<><button onClick={()=> setShowCard(false)} className="close-card">Close card</button><Card /></>}
       {openLyrics && <Lyrics setLyricsOpened={setOpenLyrics} />}
     </>
   );

@@ -76,8 +76,12 @@ li {
 }
 
 @media (max-width: 768px) {
+  .card25{
+  transform: translate(-50%, -50%) scale(.4);
+transition: all .1s;
+  }
   .card25.hovered {
-      transform: translate(-10%, -50%) scale(.4);
+      transform: translate(-30%, -50%) scale(.4);
   }
 }
 
@@ -186,6 +190,24 @@ li {
   }
 }
 
+.close-card{
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999999999999;
+  font-size: 18px;
+
+  height: 40px;
+  padding: 0px 20px;
+  border: none;
+  background-color: #f3ff94;
+
+  &:hover{
+    background-color: #fa94ff;
+  }
+}
+
 .phone {
   width: 400px;
   height: 700px;
@@ -210,6 +232,15 @@ li {
 
   overflow-y: hidden;
   overflow-x: hidden;
+}
+
+@media (max-width:768px){
+  .phone{
+
+    transform: translateX(-50%);
+    top: 20px;
+  }
+
 }
 
 .phone .hora {
