@@ -47,7 +47,7 @@ const Counter = ({ dateInput }: CounterProps) => {
   }, [eventDate]);
 
   if (!timeLeft || (timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0)) {
-    return <div className={styles.wrapper}>Evento concluído!</div>;
+    return <div className={styles.wrapper}>Event finished!</div>;
   }
 
   return (

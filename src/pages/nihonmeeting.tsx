@@ -66,7 +66,7 @@ const Counter = ({ dateInput }: CounterProps) => {
       timeLeft.minutes === 0 &&
       timeLeft.seconds === 0)
   ) {
-    return <div className={styles.wrapper}>Evento concluído!</div>;
+    return <div className={styles.wrapper}>Event finished!</div>;
   }
 
   const splitDigits = (num: number) => {
